@@ -1,5 +1,5 @@
 import Sidebar from "../Sidebar/Sidebar";
-import FormContainer from "../Form/Form";
+import FormContainer from "../Form/FormContainer";
 import classes from "./Main.module.scss";
 
 function Main() {

@@ -21,4 +21,10 @@
     color: var(--white);
     font-weight: 700;
   }
+
+  .current {
+    background-color: var(--light-blue);
+    color: var(--purplish-blue);
+    border-color: var(--light-blue);
+  }
 }

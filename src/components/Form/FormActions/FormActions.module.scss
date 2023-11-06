@@ -1,0 +1,30 @@
+.form__actions {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: var(--white);
+  width: 100vw;
+
+  button {
+    width: 120px;
+    height: 40px;
+    color: var(--white);
+    background-color: var(--marine-blue);
+    border: none;
+    border-radius: 5px;
+    font-family: var(--font-family-basic);
+    font-size: 1rem;
+    &:disabled {
+      display: none;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .back-button {
+    background-color: transparent;
+    color: var(--cool-gray);
+  }
+}

@@ -5,7 +5,7 @@ type stepData = {
   description: string;
 };
 
-type textInputs = {
+type stepOneInputs = {
   id: string;
   type: string;
   label: string;
@@ -13,17 +13,19 @@ type textInputs = {
   name: string;
 };
 
-type formValues = {
+type stepOneValues = {
   name: string;
   email: string;
   phone: string;
-  yearlyBilling: boolean;
+};
+type stepTwoValues = {
   selectedPlan: string;
-  addOns: {
-    onlineService: boolean;
-    largerStorage: boolean;
-    customizableProfile: boolean;
-  };
+};
+
+type stepThreeValues = {
+  onlineService: boolean;
+  largerStorage: boolean;
+  customizableProfile: boolean;
 };
 
 const formData: stepData[] = [
@@ -53,7 +55,9 @@ const formData: stepData[] = [
   },
 ];
 
-export const stepOneInputs: textInputs[] = [
+export default formData;
+
+export const stepOneInputs: stepOneInputs[] = [
   {
     id: "1",
     type: "text",
@@ -77,17 +81,17 @@ export const stepOneInputs: textInputs[] = [
   },
 ];
 
-export default formData;
-
-export const initialFormValues: formValues = {
+export const stepOneValues: stepOneValues = {
   name: "",
   email: "",
   phone: "",
-  yearlyBilling: false,
+};
+export const stepTwoValues: stepTwoValues = {
   selectedPlan: "",
-  addOns: {
-    onlineService: false,
-    largerStorage: false,
-    customizableProfile: false,
-  },
+};
+
+export const stepThreeValues: stepThreeValues = {
+  onlineService: false,
+  largerStorage: false,
+  customizableProfile: false,
 };
