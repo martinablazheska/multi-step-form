@@ -27,11 +27,11 @@ function FormContainer() {
       onSubmit={submitHandler}
       validationSchema={validationSchema}
     >
-      {({ errors, touched }) => (
+      {({ values, errors, touched }) => (
         <div className={classes["form-container"]}>
           <Form className={classes.form}>
             {currentStep === 0 && <StepOne errors={errors} touched={touched} />}
-            {currentStep === 1 && <StepTwo />}
+            {currentStep === 1 && <StepTwo values={values} />}
             <FormActions />
           </Form>
         </div>

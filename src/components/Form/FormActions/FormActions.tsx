@@ -15,6 +15,7 @@ function FormActions() {
         {currentStep === 3 ? "Confirm" : "Next Step"}
       </button>
       <button
+        type="button"
         onClick={prevStepHandler}
         disabled={currentStep === 0}
         className={classes["back-button"]}

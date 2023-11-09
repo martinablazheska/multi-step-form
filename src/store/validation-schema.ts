@@ -10,6 +10,7 @@ const validationSchema = Yup.object().shape({
   phone: Yup.string()
     .required("This field is required")
     .matches(/[0-9]/, "Please enter a valid phone number"),
+  selectedPlan: Yup.string().required(),
 });
 
 export default validationSchema;

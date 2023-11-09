@@ -3,7 +3,18 @@ import formData from "../../../store/form-data";
 
 import classes from "./StepOne.module.scss";
 
-const StepOne: React.FC<{ errors: any; touched: any }> = (props) => {
+const StepOne: React.FC<{
+  errors: {
+    name?: string | undefined;
+    email?: string | undefined;
+    phone?: string | undefined;
+  };
+  touched: {
+    name?: boolean | undefined;
+    email?: boolean | undefined;
+    phone?: boolean | undefined;
+  };
+}> = (props) => {
   return (
     <>
       <div className={classes["step-one"]}>

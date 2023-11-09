@@ -5,6 +5,8 @@ type formContext = {
   setCurrentStep: (c: number) => void;
   yearlyBilling: boolean;
   setYearlyBilling: (b: boolean) => void;
+  prices: number[];
+  setPrices: (p: number[]) => void;
 };
 
 export const formContext = createContext<formContext>({
@@ -12,19 +14,27 @@ export const formContext = createContext<formContext>({
   setCurrentStep: () => {},
   yearlyBilling: false,
   setYearlyBilling: () => {},
+  prices: [],
+  setPrices: () => {},
 });
+
+export const monthlyPrices: number[] = [9, 12, 15];
+export const yearlyPrices: number[] = [90, 120, 150];
 
 const FormContextProvider: React.FC<{
   children?: React.ReactNode;
 }> = (props) => {
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep, setCurrentStep] = useState(1);
   const [yearlyBilling, setYearlyBilling] = useState(false);
+  const [prices, setPrices] = useState(monthlyPrices);
 
   const formContextData: formContext = {
     currentStep,
     setCurrentStep,
     yearlyBilling,
     setYearlyBilling,
+    prices,
+    setPrices,
   };
   return (
     <formContext.Provider value={formContextData}>
