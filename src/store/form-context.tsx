@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 type formContext = {
   currentStep: number;
@@ -7,11 +7,30 @@ type formContext = {
   setYearlyBilling: (b: boolean) => void;
 };
 
-const formContext = createContext<formContext>({
+export const formContext = createContext<formContext>({
   currentStep: 0,
   setCurrentStep: () => {},
   yearlyBilling: false,
   setYearlyBilling: () => {},
 });
 
-export default formContext;
+const FormContextProvider: React.FC<{
+  children?: React.ReactNode;
+}> = (props) => {
+  const [currentStep, setCurrentStep] = useState(0);
+  const [yearlyBilling, setYearlyBilling] = useState(false);
+
+  const formContextData: formContext = {
+    currentStep,
+    setCurrentStep,
+    yearlyBilling,
+    setYearlyBilling,
+  };
+  return (
+    <formContext.Provider value={formContextData}>
+      {props.children}
+    </formContext.Provider>
+  );
+};
+
+export default FormContextProvider;

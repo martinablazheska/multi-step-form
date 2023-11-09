@@ -5,29 +5,6 @@ type stepData = {
   description: string;
 };
 
-type stepOneInputs = {
-  id: string;
-  type: string;
-  label: string;
-  placeholder: string;
-  name: string;
-};
-
-type stepOneValues = {
-  name: string;
-  email: string;
-  phone: string;
-};
-type stepTwoValues = {
-  selectedPlan: string;
-};
-
-type stepThreeValues = {
-  onlineService: boolean;
-  largerStorage: boolean;
-  customizableProfile: boolean;
-};
-
 const formData: stepData[] = [
   {
     step: 1,
@@ -57,40 +34,21 @@ const formData: stepData[] = [
 
 export default formData;
 
-export const stepOneInputs: stepOneInputs[] = [
-  {
-    id: "1",
-    type: "text",
-    label: "Name",
-    placeholder: "e.g. Stephen King",
-    name: "name",
-  },
-  {
-    id: "2",
-    type: "text",
-    label: "Email Address",
-    placeholder: "e.g. stephenking@lorem.com",
-    name: "email",
-  },
-  {
-    id: "3",
-    type: "tel",
-    label: "Phone Number",
-    placeholder: "e.g. +1 234 567 890",
-    name: "phone",
-  },
-];
+export type values = {
+  name: string;
+  email: string;
+  phone: string;
+  selectedPlan: string;
+  onlineService: boolean;
+  largerStorage: boolean;
+  customizableProfile: boolean;
+};
 
-export const stepOneValues: stepOneValues = {
+export const initialValues: values = {
   name: "",
   email: "",
   phone: "",
-};
-export const stepTwoValues: stepTwoValues = {
-  selectedPlan: "",
-};
-
-export const stepThreeValues: stepThreeValues = {
+  selectedPlan: "arcade",
   onlineService: false,
   largerStorage: false,
   customizableProfile: false,

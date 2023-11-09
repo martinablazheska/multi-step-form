@@ -1,6 +1,6 @@
 import classes from "./FormActions.module.scss";
 import { useContext } from "react";
-import formContext from "../../../store/form-context";
+import { formContext } from "../../../store/form-context";
 
 function FormActions() {
   const { currentStep, setCurrentStep } = useContext(formContext);
@@ -8,6 +8,7 @@ function FormActions() {
   function prevStepHandler() {
     setCurrentStep(currentStep - 1);
   }
+
   return (
     <div className={classes["form__actions"]}>
       <button type="submit">

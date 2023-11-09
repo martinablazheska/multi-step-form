@@ -1,4 +1,4 @@
-.form {
+.form-container {
   height: 80vh;
   width: 100%;
   background-color: transparent;
@@ -20,4 +20,13 @@ p {
 
   line-height: 1.5em;
   color: var(--cool-gray);
+}
+.form {
+  width: 95%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
 }

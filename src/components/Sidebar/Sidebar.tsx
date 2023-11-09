@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import formContext from "../../store/form-context";
+import { formContext } from "../../store/form-context";
 import classes from "./Sidebar.module.scss";
 
 function Steps() {
