@@ -1,0 +1,50 @@
+.switch-container {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: var(--alabaster);
+  border-radius: 15px;
+
+  span {
+    font-weight: 700;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .on {
+    color: var(--marine-blue);
+  }
+
+  .off {
+    color: var(--cool-gray);
+  }
+
+  .background {
+    width: 60px;
+    height: 30px;
+    border-radius: 40px;
+    padding: 5px;
+    background-color: var(--marine-blue);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .checked {
+    justify-content: flex-end;
+  }
+
+  .handle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--white);
+  }
+}

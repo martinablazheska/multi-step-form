@@ -1,41 +1,25 @@
 import { useContext } from "react";
-import {
-  formContext,
-  monthlyPrices,
-  yearlyPrices,
-} from "../../../store/form-context";
-
+import { formContext } from "../../../../store/form-context";
 import { Field } from "formik";
 
-import formData from "../../../store/form-data";
-import { values } from "../../../store/form-data";
+import formData from "../../../../store/form-data";
+import { values } from "../../../../store/form-data";
 
-import SwitchButton from "../FormActions/SwitchButton";
-
-import arcadeIcon from "../../../assets/icon-arcade.svg";
-import advancedIcon from "../../../assets/icon-advanced.svg";
-import proIcon from "../../../assets/icon-pro.svg";
+import arcadeIcon from "../../../../assets/icon-arcade.svg";
+import advancedIcon from "../../../../assets/icon-advanced.svg";
+import proIcon from "../../../../assets/icon-pro.svg";
 
 import classes from "./StepTwo.module.scss";
+import ToggleSwitch from "../../FormActions/ToggleSwitch";
 
 const StepTwo: React.FC<{ values: values }> = ({ values }) => {
-  const { yearlyBilling, setYearlyBilling, prices, setPrices } =
-    useContext(formContext);
-
-  function switchHandler() {
-    setYearlyBilling(!yearlyBilling);
-    if (prices === monthlyPrices) {
-      setPrices(yearlyPrices);
-    } else {
-      setPrices(monthlyPrices);
-    }
-  }
+  const { prices } = useContext(formContext);
 
   return (
     <div className={classes["step-two"]}>
       <h1>{formData[1].title}</h1>
       <p>{formData[1].description}</p>
-      <div>
+      <div className={classes.plan}>
         <label
           htmlFor="arcade"
           className={values.selectedPlan === "arcade" ? classes.checked : ""}
@@ -48,7 +32,7 @@ const StepTwo: React.FC<{ values: values }> = ({ values }) => {
         </label>
         <Field type="radio" name="selectedPlan" id="arcade" value="arcade" />
       </div>
-      <div>
+      <div className={classes.plan}>
         <label
           htmlFor="advanced"
           className={values.selectedPlan === "advanced" ? classes.checked : ""}
@@ -66,7 +50,7 @@ const StepTwo: React.FC<{ values: values }> = ({ values }) => {
           value="advanced"
         />
       </div>
-      <div>
+      <div className={classes.plan}>
         <label
           htmlFor="pro"
           className={values.selectedPlan === "pro" ? classes.checked : ""}
@@ -79,11 +63,7 @@ const StepTwo: React.FC<{ values: values }> = ({ values }) => {
         </label>
         <Field type="radio" name="selectedPlan" id="pro" value="pro" />
       </div>
-      <div className={classes.switch}>
-        <span>Monthly</span>
-        <SwitchButton checked={yearlyBilling} onChange={switchHandler} />
-        <span>Yearly</span>
-      </div>
+      <ToggleSwitch />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { Field } from "formik";
-import formData from "../../../store/form-data";
+import formData from "../../../../store/form-data";
 
 import classes from "./StepOne.module.scss";
 

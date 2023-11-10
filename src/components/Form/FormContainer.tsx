@@ -4,8 +4,8 @@ import { formContext } from "../../store/form-context";
 import { Formik, Form } from "formik";
 
 import FormActions from "./FormActions/FormActions";
-import StepOne from "./Steps/StepOne";
-import StepTwo from "./Steps/StepTwo";
+import StepOne from "./Steps/1/StepOne";
+import StepTwo from "./Steps/2/StepTwo";
 
 import { initialValues } from "../../store/form-data";
 import validationSchema from "../../store/validation-schema";
