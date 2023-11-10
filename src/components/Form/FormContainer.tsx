@@ -11,6 +11,7 @@ import { initialValues } from "../../store/form-data";
 import validationSchema from "../../store/validation-schema";
 
 import classes from "./FormContainer.module.scss";
+import StepThree from "./Steps/3/StepThree";
 
 function FormContainer() {
   const { currentStep, setCurrentStep } = useContext(formContext);
@@ -32,6 +33,7 @@ function FormContainer() {
           <Form className={classes.form}>
             {currentStep === 0 && <StepOne errors={errors} touched={touched} />}
             {currentStep === 1 && <StepTwo values={values} />}
+            {currentStep === 2 && <StepThree values={values} />}
             <FormActions />
           </Form>
         </div>

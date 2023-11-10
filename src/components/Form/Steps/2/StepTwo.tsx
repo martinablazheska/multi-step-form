@@ -13,7 +13,7 @@ import classes from "./StepTwo.module.scss";
 import ToggleSwitch from "../../FormActions/ToggleSwitch";
 
 const StepTwo: React.FC<{ values: values }> = ({ values }) => {
-  const { prices } = useContext(formContext);
+  const { yearlyBilling, prices } = useContext(formContext);
 
   return (
     <div className={classes["step-two"]}>
@@ -28,6 +28,7 @@ const StepTwo: React.FC<{ values: values }> = ({ values }) => {
           <div>
             <p>Arcade</p>
             <p>{`$${prices[0]}/mo`}</p>
+            {yearlyBilling && <p>2 months free</p>}
           </div>
         </label>
         <Field type="radio" name="selectedPlan" id="arcade" value="arcade" />
@@ -41,6 +42,7 @@ const StepTwo: React.FC<{ values: values }> = ({ values }) => {
           <div>
             <p>Advanced</p>
             <p>{`$${prices[1]}/mo`}</p>
+            {yearlyBilling && <p>2 months free</p>}
           </div>
         </label>
         <Field
@@ -59,6 +61,7 @@ const StepTwo: React.FC<{ values: values }> = ({ values }) => {
           <div>
             <p>Pro</p>
             <p>{`$${prices[2]}/mo`}</p>
+            {yearlyBilling && <p>2 months free</p>}
           </div>
         </label>
         <Field type="radio" name="selectedPlan" id="pro" value="pro" />
