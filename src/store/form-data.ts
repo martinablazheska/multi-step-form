@@ -48,11 +48,35 @@ export const initialValues: values = {
   name: "",
   email: "",
   phone: "",
-  selectedPlan: "arcade",
+  selectedPlan: "Arcade",
   onlineService: false,
   largerStorage: false,
   customizableProfile: false,
 };
+
+export type plan = {
+  name: string;
+  monthlyCost: number;
+  yearlyCost: number;
+};
+
+export const plans: plan[] = [
+  {
+    name: "Arcade",
+    monthlyCost: 9,
+    yearlyCost: 90,
+  },
+  {
+    name: "Advanced",
+    monthlyCost: 12,
+    yearlyCost: 120,
+  },
+  {
+    name: "Pro",
+    monthlyCost: 15,
+    yearlyCost: 150,
+  },
+];
 
 export type addOn = {
   name: string;

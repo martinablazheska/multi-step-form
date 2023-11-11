@@ -1,5 +1,6 @@
 .main {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: var(--magnolia);
+  box-sizing: border-box;
 }

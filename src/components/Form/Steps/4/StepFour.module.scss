@@ -34,6 +34,9 @@
       &:last-of-type {
         color: var(--cool-gray);
         text-decoration: underline solid var(--cool-gray) 1px;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }

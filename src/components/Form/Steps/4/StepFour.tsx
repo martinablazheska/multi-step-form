@@ -1,10 +1,28 @@
 import formData from "../../../../store/form-data";
-import { values } from "../../../../store/form-data";
+
+import { useContext } from "react";
+import { formContext } from "../../../../store/form-context";
+
+import calculateSummary from "./calculate-summary";
 
 import classes from "./StepFour.module.scss";
 
-const StepFour: React.FC<{ values: values }> = ({ values }) => {
-  function calculateSummary(values: values) {}
+const StepFour: React.FC<{
+  name: string;
+  email: string;
+  phone: string;
+  selectedPlan: string;
+  onlineService: boolean;
+  largerStorage: boolean;
+  customizableProfile: boolean;
+}> = (values) => {
+  const { yearlyBilling, setCurrentStep } = useContext(formContext);
+
+  const summary = calculateSummary(values, yearlyBilling);
+
+  function changeHandler() {
+    setCurrentStep(1);
+  }
   return (
     <div className={classes["step-four"]}>
       <h1>{formData[3].title}</h1>
@@ -12,25 +30,37 @@ const StepFour: React.FC<{ values: values }> = ({ values }) => {
       <div className={classes.summary}>
         <div className={classes.plan}>
           <div>
-            <span>Arcade (Monthly)</span>
-            <span>Change</span>
+            <span>
+              {summary.plan.name} {yearlyBilling ? "(Yearly)" : "(Monthly)"}
+            </span>
+            <span onClick={changeHandler}>Change</span>
           </div>
-          <div className={classes.price}>$9/mo</div>
+          <div className={classes.price}>
+            {yearlyBilling
+              ? `$${summary.plan.yearlyCost}/yr`
+              : `$${summary.plan.monthlyCost}/mo`}
+          </div>
         </div>
         <div className={classes.addons}>
-          <div>
-            <span className={classes.addon}>Online service</span>
-            <span className={classes.price}>+$1/mo</span>
-          </div>
-          <div>
-            <span className={classes.addon}>Larger storage</span>
-            <span className={classes.price}>+$2/mo</span>
-          </div>
+          {summary.selectedAddOns.map((a) => (
+            <div>
+              <span className={classes.addon}>{a.name}</span>
+              <span className={classes.price}>
+                {yearlyBilling
+                  ? `+$${a.yearlyCost}/yr`
+                  : `+$${a.monthlyCost}/mo`}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
       <div className={classes.total}>
-        <span>Total (per month)</span>
-        <span className={classes.price}>+$12/mo</span>
+        <span>
+          {"Total"} {yearlyBilling ? "(per year)" : "(per month)"}
+        </span>
+        <span className={classes.price}>
+          {yearlyBilling ? `$${summary.total}/yr` : `+$${summary.total}/mo`}
+        </span>
       </div>
     </div>
   );

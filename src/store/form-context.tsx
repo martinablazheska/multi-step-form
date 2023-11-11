@@ -7,6 +7,8 @@ type formContext = {
   setYearlyBilling: (b: boolean) => void;
   prices: number[];
   setPrices: (p: number[]) => void;
+  isSubmitted: boolean;
+  setIsSubmitted: (s: boolean) => void;
 };
 
 export const formContext = createContext<formContext>({
@@ -16,6 +18,8 @@ export const formContext = createContext<formContext>({
   setYearlyBilling: () => {},
   prices: [],
   setPrices: () => {},
+  isSubmitted: false,
+  setIsSubmitted: () => {},
 });
 
 export const monthlyPrices: number[] = [9, 12, 15];
@@ -24,9 +28,10 @@ export const yearlyPrices: number[] = [90, 120, 150];
 const FormContextProvider: React.FC<{
   children?: React.ReactNode;
 }> = (props) => {
-  const [currentStep, setCurrentStep] = useState(4);
+  const [currentStep, setCurrentStep] = useState(0);
   const [yearlyBilling, setYearlyBilling] = useState(false);
   const [prices, setPrices] = useState(monthlyPrices);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const formContextData: formContext = {
     currentStep,
@@ -35,6 +40,8 @@ const FormContextProvider: React.FC<{
     setYearlyBilling,
     prices,
     setPrices,
+    isSubmitted,
+    setIsSubmitted,
   };
   return (
     <formContext.Provider value={formContextData}>

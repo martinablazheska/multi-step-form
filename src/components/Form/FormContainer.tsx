@@ -16,14 +16,17 @@ import validationSchema from "../../store/validation-schema";
 import classes from "./FormContainer.module.scss";
 
 function FormContainer() {
-  const { currentStep, setCurrentStep } = useContext(formContext);
+  const { currentStep, setCurrentStep, isSubmitted, setIsSubmitted } =
+    useContext(formContext);
+
   function submitHandler() {
     if (currentStep === 3) {
-      console.log("Submitted");
+      setIsSubmitted(true);
     } else {
       setCurrentStep(currentStep + 1);
     }
   }
+
   return (
     <Formik
       initialValues={initialValues}
@@ -37,8 +40,8 @@ function FormContainer() {
             {currentStep === 1 && <StepTwo values={values} />}
             {currentStep === 2 && <StepThree values={values} />}
             {currentStep === 3 && <StepFour values={values} />}
-            {currentStep === 4 && <FinalStep />}
-            {!(currentStep === 4) && <FormActions />}
+            {isSubmitted && <FinalStep />}
+            {!isSubmitted && <FormActions />}
           </Form>
         </div>
       )}
