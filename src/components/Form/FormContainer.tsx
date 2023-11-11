@@ -8,6 +8,7 @@ import StepOne from "./Steps/1/StepOne";
 import StepTwo from "./Steps/2/StepTwo";
 import StepThree from "./Steps/3/StepThree";
 import StepFour from "./Steps/4/StepFour";
+import FinalStep from "./Steps/5/FinalStep";
 
 import { initialValues } from "../../store/form-data";
 import validationSchema from "../../store/validation-schema";
@@ -36,7 +37,8 @@ function FormContainer() {
             {currentStep === 1 && <StepTwo values={values} />}
             {currentStep === 2 && <StepThree values={values} />}
             {currentStep === 3 && <StepFour values={values} />}
-            <FormActions />
+            {currentStep === 4 && <FinalStep />}
+            {!(currentStep === 4) && <FormActions />}
           </Form>
         </div>
       )}

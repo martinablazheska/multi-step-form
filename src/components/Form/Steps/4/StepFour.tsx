@@ -4,6 +4,7 @@ import { values } from "../../../../store/form-data";
 import classes from "./StepFour.module.scss";
 
 const StepFour: React.FC<{ values: values }> = ({ values }) => {
+  function calculateSummary(values: values) {}
   return (
     <div className={classes["step-four"]}>
       <h1>{formData[3].title}</h1>
