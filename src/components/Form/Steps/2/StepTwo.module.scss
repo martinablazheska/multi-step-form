@@ -16,7 +16,7 @@
 
     label {
       width: 100%;
-      height: 100%;
+      height: 120px;
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
@@ -52,7 +52,7 @@
       }
     }
     .checked {
-      outline: 1.5px solid var(--marine-blue);
+      outline: 1px solid var(--purplish-blue);
       background-color: var(--alabaster);
     }
     input {
