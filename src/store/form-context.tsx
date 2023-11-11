@@ -24,7 +24,7 @@ export const yearlyPrices: number[] = [90, 120, 150];
 const FormContextProvider: React.FC<{
   children?: React.ReactNode;
 }> = (props) => {
-  const [currentStep, setCurrentStep] = useState(2);
+  const [currentStep, setCurrentStep] = useState(3);
   const [yearlyBilling, setYearlyBilling] = useState(false);
   const [prices, setPrices] = useState(monthlyPrices);
 
