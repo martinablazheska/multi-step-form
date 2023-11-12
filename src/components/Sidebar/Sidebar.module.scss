@@ -21,6 +21,9 @@
     border: var(--white) 2px solid;
     color: var(--white);
     font-weight: 700;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .current {

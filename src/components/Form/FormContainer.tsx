@@ -39,7 +39,7 @@ function FormContainer() {
             {currentStep === 0 && <StepOne errors={errors} touched={touched} />}
             {currentStep === 1 && <StepTwo values={values} />}
             {currentStep === 2 && <StepThree values={values} />}
-            {currentStep === 3 && <StepFour values={values} />}
+            {!isSubmitted && currentStep === 3 && <StepFour values={values} />}
             {isSubmitted && <FinalStep />}
             {!isSubmitted && <FormActions />}
           </Form>
