@@ -27,7 +27,7 @@ const RadioField: React.FC<{
           <p>
             {yearlyBilling
               ? `$${plan.yearlyCost}/yr`
-              : `$${plan.monthlyCost}}/mo`}
+              : `$${plan.monthlyCost}/mo`}
           </p>
           {yearlyBilling && <p>2 months free</p>}
         </div>
