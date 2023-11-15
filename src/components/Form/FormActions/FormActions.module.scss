@@ -15,16 +15,31 @@
     border-radius: 5px;
     font-family: var(--font-family-basic);
     font-size: 1rem;
+    font-weight: 700;
     &:disabled {
       display: none;
     }
     &:hover {
       cursor: pointer;
+      background-color: var(--purplish-blue);
     }
   }
 
   .back-button {
     background-color: transparent;
     color: var(--cool-gray);
+    font-weight: 700;
+    &:hover {
+      cursor: pointer;
+      background-color: transparent;
+      color: var(--marine-blue);
+    }
+  }
+}
+
+@media (min-width: 450px) {
+  .form__actions {
+    width: 100%;
+    padding: 30px;
   }
 }

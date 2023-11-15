@@ -14,27 +14,29 @@ const StepTwo: React.FC<{ values: values }> = ({ values }) => {
     <div className={classes["step-two"]}>
       <h1>{formData[1].title}</h1>
       <p>{formData[1].description}</p>
-      <RadioField
-        plan={plans[0]}
-        groupName="selectedPlan"
-        img={arcadeIcon}
-        altText="arcade icon"
-        value={values.selectedPlan}
-      />
-      <RadioField
-        plan={plans[1]}
-        groupName="selectedPlan"
-        img={advancedIcon}
-        altText="advanced icon"
-        value={values.selectedPlan}
-      />
-      <RadioField
-        plan={plans[2]}
-        groupName="selectedPlan"
-        img={proIcon}
-        altText="pro icon"
-        value={values.selectedPlan}
-      />
+      <div className={classes["plan-picker"]}>
+        <RadioField
+          plan={plans[0]}
+          groupName="selectedPlan"
+          img={arcadeIcon}
+          altText="arcade icon"
+          value={values.selectedPlan}
+        />
+        <RadioField
+          plan={plans[1]}
+          groupName="selectedPlan"
+          img={advancedIcon}
+          altText="advanced icon"
+          value={values.selectedPlan}
+        />
+        <RadioField
+          plan={plans[2]}
+          groupName="selectedPlan"
+          img={proIcon}
+          altText="pro icon"
+          value={values.selectedPlan}
+        />
+      </div>
       <ToggleSwitch />
     </div>
   );

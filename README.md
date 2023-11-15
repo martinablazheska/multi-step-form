@@ -58,3 +58,4 @@ Users should be able to:
 2. Add desktop version;
 3. Create a wrapper component for the form steps, since the styles are the same for each step and there is lots of repetitive code in the scss modules at the moment;
 4. Improve the calculateSummary function;
+5. Improve the toggle button (add transition).

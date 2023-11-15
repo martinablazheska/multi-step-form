@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { formContext } from "../../store/form-context";
+import formData from "../../store/form-data";
 import classes from "./Sidebar.module.scss";
 
 function Steps() {
-  const steps = [1, 2, 3, 4];
   const { currentStep, setCurrentStep, isSubmitted } = useContext(formContext);
 
   function goToStep(s: number) {
@@ -14,14 +14,20 @@ function Steps() {
 
   return (
     <div className={classes.sidebar}>
-      {steps.map((step: number) => (
-        <span
-          key={step}
-          className={currentStep + 1 === step ? classes.current : ""}
-          onClick={() => goToStep(step)}
+      {formData.map((f) => (
+        <div
+          key={f.step}
+          onClick={() => goToStep(f.step)}
+          className={classes.step}
         >
-          {step}
-        </span>
+          <div className={currentStep + 1 === f.step ? classes.current : ""}>
+            {f.step}
+          </div>
+          <div>
+            <span>STEP {f.step}</span>
+            <span>{f.title}</span>
+          </div>
+        </div>
       ))}
     </div>
   );

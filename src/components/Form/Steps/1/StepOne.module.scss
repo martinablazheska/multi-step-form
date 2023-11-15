@@ -8,6 +8,7 @@
   translate: 0px -25px;
   background-color: var(--white);
   border-radius: 15px;
+  box-shadow: rgba(85, 85, 110, 0.2) 0px 7px 29px 0px;
 
   div {
     display: flex;
@@ -57,5 +58,12 @@
     .error {
       outline-color: var(--strawberry-red);
     }
+  }
+}
+
+@media (min-width: 450px) {
+  .step-one {
+    box-shadow: none;
+    translate: 0px;
   }
 }

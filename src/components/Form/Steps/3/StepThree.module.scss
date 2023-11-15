@@ -8,4 +8,12 @@
   translate: 0px -25px;
   background-color: var(--white);
   border-radius: 15px;
+  box-shadow: rgba(85, 85, 110, 0.2) 0px 7px 29px 0px;
+}
+
+@media (min-width: 450px) {
+  .step-three {
+    box-shadow: none;
+    translate: 0px;
+  }
 }

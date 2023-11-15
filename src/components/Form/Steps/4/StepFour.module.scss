@@ -8,6 +8,7 @@
   translate: 0px -25px;
   background-color: var(--white);
   border-radius: 15px;
+  box-shadow: rgba(85, 85, 110, 0.2) 0px 7px 29px 0px;
 }
 
 .summary {
@@ -36,6 +37,7 @@
         text-decoration: underline solid var(--cool-gray) 1px;
         &:hover {
           cursor: pointer;
+          color: var(--purplish-blue);
         }
       }
     }
@@ -77,5 +79,12 @@
     color: var(--purplish-blue);
     font-weight: 700;
     font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 450px) {
+  .step-four {
+    box-shadow: none;
+    translate: 0px;
   }
 }

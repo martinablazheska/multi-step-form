@@ -9,6 +9,7 @@
   translate: 0px -25px;
   background-color: var(--white);
   border-radius: 15px;
+  box-shadow: rgba(85, 85, 110, 0.2) 0px 7px 29px 0px;
 
   img {
     width: 80px;
@@ -24,5 +25,20 @@
   p {
     text-align: center;
     width: 30%;
+  }
+}
+
+@media (min-width: 450px) {
+  .final-step {
+    box-shadow: none;
+    translate: 0px;
+    height: 100%;
+    img {
+      width: 150px;
+      height: 150px;
+    }
+    p {
+      width: 50%;
+    }
   }
 }
