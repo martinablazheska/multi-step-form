@@ -5,13 +5,15 @@ import arcadeIcon from "../../../../assets/icon-arcade.svg";
 import advancedIcon from "../../../../assets/icon-advanced.svg";
 import proIcon from "../../../../assets/icon-pro.svg";
 
-import classes from "./StepTwo.module.scss";
 import ToggleSwitch from "../../FormActions/ToggleSwitch";
 import RadioField from "./RadioField";
+import StepWrapper from "../../../UI/StepWrapper";
+
+import classes from "./StepTwo.module.scss";
 
 const StepTwo: React.FC<{ values: values }> = ({ values }) => {
   return (
-    <div className={classes["step-two"]}>
+    <StepWrapper>
       <h1>{formData[1].title}</h1>
       <p>{formData[1].description}</p>
       <div className={classes["plan-picker"]}>
@@ -38,7 +40,7 @@ const StepTwo: React.FC<{ values: values }> = ({ values }) => {
         />
       </div>
       <ToggleSwitch />
-    </div>
+    </StepWrapper>
   );
 };
 

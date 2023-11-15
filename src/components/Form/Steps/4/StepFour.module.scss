@@ -1,16 +1,3 @@
-.step-four {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 100%;
-  height: 100%;
-  padding: 30px;
-  translate: 0px -25px;
-  background-color: var(--white);
-  border-radius: 15px;
-  box-shadow: rgba(85, 85, 110, 0.2) 0px 7px 29px 0px;
-}
-
 .summary {
   background-color: var(--alabaster);
   border-radius: 15px;
@@ -79,12 +66,5 @@
     color: var(--purplish-blue);
     font-weight: 700;
     font-size: 1.1rem;
-  }
-}
-
-@media (min-width: 450px) {
-  .step-four {
-    box-shadow: none;
-    translate: 0px;
   }
 }

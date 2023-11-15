@@ -1,6 +1,8 @@
 import { Field } from "formik";
 import formData from "../../../../store/form-data";
 
+import StepWrapper from "../../../UI/StepWrapper";
+
 import classes from "./StepOne.module.scss";
 
 const StepOne: React.FC<{
@@ -17,7 +19,7 @@ const StepOne: React.FC<{
 }> = (props) => {
   return (
     <>
-      <div className={classes["step-one"]}>
+      <StepWrapper>
         <h1>{formData[0].title}</h1>
         <p>{formData[0].description}</p>
         <div>
@@ -73,7 +75,7 @@ const StepOne: React.FC<{
             }
           />
         </div>
-      </div>
+      </StepWrapper>
     </>
   );
 };

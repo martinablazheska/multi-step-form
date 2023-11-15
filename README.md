@@ -54,8 +54,6 @@ Users should be able to:
 
 ### Continued development
 
-1. Improve the sizing of the various components so that there is no unnecessary overflow;
-2. Add desktop version;
-3. Create a wrapper component for the form steps, since the styles are the same for each step and there is lots of repetitive code in the scss modules at the moment;
-4. Improve the calculateSummary function;
-5. Improve the toggle button (add transition).
+1. Improve the calculateSummary function;
+2. Improve the toggle button (add transition).
+3. Make the toggle button reusable for different functions.

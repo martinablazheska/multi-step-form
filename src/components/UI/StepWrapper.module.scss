@@ -1,4 +1,4 @@
-.step-three {
+.step-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -12,7 +12,7 @@
 }
 
 @media (min-width: 450px) {
-  .step-three {
+  .step-wrapper {
     box-shadow: none;
     translate: 0px;
   }

@@ -4,6 +4,8 @@ import { values } from "../../../../store/form-data";
 import { useContext } from "react";
 import { formContext } from "../../../../store/form-context";
 
+import StepWrapper from "../../../UI/StepWrapper";
+
 import calculateSummary from "./calculate-summary";
 
 import classes from "./StepFour.module.scss";
@@ -16,7 +18,7 @@ const StepFour: React.FC<{ values: values }> = ({ values }) => {
   }
   const summary = calculateSummary(values, yearlyBilling);
   return (
-    <div className={classes["step-four"]}>
+    <StepWrapper>
       <h1>{formData[3].title}</h1>
       <p>{formData[3].description}</p>
       <div className={classes.summary}>
@@ -54,7 +56,7 @@ const StepFour: React.FC<{ values: values }> = ({ values }) => {
           {yearlyBilling ? `$${summary.total}/yr` : `+$${summary.total}/mo`}
         </span>
       </div>
-    </div>
+    </StepWrapper>
   );
 };
 

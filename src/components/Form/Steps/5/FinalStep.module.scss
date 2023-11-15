@@ -1,19 +1,12 @@
 .final-step {
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 70%;
-  padding: 30px;
-  translate: 0px -25px;
-  background-color: var(--white);
-  border-radius: 15px;
-  box-shadow: rgba(85, 85, 110, 0.2) 0px 7px 29px 0px;
 
   img {
-    width: 80px;
-    height: 80px;
+    height: 30%;
   }
 
   h2 {
@@ -24,19 +17,12 @@
   }
   p {
     text-align: center;
-    width: 30%;
+    width: 100%;
   }
 }
 
 @media (min-width: 450px) {
   .final-step {
-    box-shadow: none;
-    translate: 0px;
-    height: 100%;
-    img {
-      width: 150px;
-      height: 150px;
-    }
     p {
       width: 50%;
     }

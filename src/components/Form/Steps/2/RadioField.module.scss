@@ -1,11 +1,11 @@
 .plan {
   width: 100%;
+  height: 30%;
   background-color: transparent;
-  margin-bottom: 35px;
 
   label {
     width: 100%;
-    height: 100px;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -33,8 +33,7 @@
       }
     }
     img {
-      width: 60px;
-      height: 60px;
+      height: 60%;
     }
     &:hover {
       cursor: pointer;
@@ -51,13 +50,18 @@
 
 @media (min-width: 450px) {
   .plan {
+    width: 30%;
+    height: 100%;
     label {
       padding: 10px;
       width: 100%;
-      height: 200px;
+      height: 60%;
       flex-direction: column;
       justify-content: space-between;
       align-items: flex-start;
+      img {
+        height: 30%;
+      }
     }
   }
 }
