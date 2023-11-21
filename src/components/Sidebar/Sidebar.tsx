@@ -4,22 +4,12 @@ import formData from "../../store/form-data";
 import classes from "./Sidebar.module.scss";
 
 function Steps() {
-  const { currentStep, setCurrentStep, isSubmitted } = useContext(formContext);
-
-  function goToStep(s: number) {
-    if (!isSubmitted) {
-      setCurrentStep(s - 1);
-    }
-  }
+  const { currentStep } = useContext(formContext);
 
   return (
     <div className={classes.sidebar}>
       {formData.map((f) => (
-        <div
-          key={f.step}
-          onClick={() => goToStep(f.step)}
-          className={classes.step}
-        >
+        <div key={f.step} className={classes.step}>
           <div className={currentStep + 1 === f.step ? classes.current : ""}>
             {f.step}
           </div>

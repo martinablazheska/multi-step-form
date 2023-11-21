@@ -31,9 +31,6 @@
       border: var(--white) 2px solid;
       color: var(--white);
       font-weight: 700;
-      &:hover {
-        cursor: pointer;
-      }
     }
 
     .current {
@@ -51,7 +48,8 @@
       }
       span:nth-of-type(2) {
         font-weight: 700;
-        font-size: 1rem;
+        text-transform: uppercase;
+        font-size: 0.9rem;
         color: var(--alabaster);
       }
     }

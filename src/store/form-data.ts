@@ -33,6 +33,7 @@ export type errors = {
   name?: string | undefined;
   email?: string | undefined;
   phone?: string | undefined;
+  plan?: string | undefined;
 };
 
 export type touched = {
