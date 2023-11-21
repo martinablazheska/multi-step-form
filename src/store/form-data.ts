@@ -5,6 +5,42 @@ type stepData = {
   description: string;
 };
 
+export type values = {
+  name: string;
+  email: string;
+  phone: string;
+  selectedPlan: string;
+  onlineService: boolean;
+  largerStorage: boolean;
+  customizableProfile: boolean;
+};
+
+export type plan = {
+  name: string;
+  monthlyCost: number;
+  yearlyCost: number;
+};
+
+export type addOn = {
+  name: string;
+  title: string;
+  description: string;
+  monthlyPrice: number;
+  yearlyPrice: number;
+};
+
+export type errors = {
+  name?: string | undefined;
+  email?: string | undefined;
+  phone?: string | undefined;
+};
+
+export type touched = {
+  name?: boolean | undefined;
+  email?: boolean | undefined;
+  phone?: boolean | undefined;
+};
+
 const formData: stepData[] = [
   {
     step: 1,
@@ -34,27 +70,6 @@ const formData: stepData[] = [
 
 export default formData;
 
-export type values = {
-  name: string;
-  email: string;
-  phone: string;
-  selectedPlan: string;
-  onlineService: boolean;
-  largerStorage: boolean;
-  customizableProfile: boolean;
-};
-export type errors = {
-  name?: string | undefined;
-  email?: string | undefined;
-  phone?: string | undefined;
-};
-
-export type touched = {
-  name?: boolean | undefined;
-  email?: boolean | undefined;
-  phone?: boolean | undefined;
-};
-
 export const initialValues: values = {
   name: "",
   email: "",
@@ -63,12 +78,6 @@ export const initialValues: values = {
   onlineService: false,
   largerStorage: false,
   customizableProfile: false,
-};
-
-export type plan = {
-  name: string;
-  monthlyCost: number;
-  yearlyCost: number;
 };
 
 export const plans: plan[] = [
@@ -88,14 +97,6 @@ export const plans: plan[] = [
     yearlyCost: 150,
   },
 ];
-
-export type addOn = {
-  name: string;
-  title: string;
-  description: string;
-  monthlyPrice: number;
-  yearlyPrice: number;
-};
 
 export const addOns: addOn[] = [
   {
