@@ -1,6 +1,7 @@
 .main {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: -webkit-fill-available;
+  max-height: 100vh;
   background-color: var(--magnolia);
   box-sizing: border-box;
 }
