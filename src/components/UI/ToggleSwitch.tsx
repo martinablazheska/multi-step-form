@@ -3,7 +3,7 @@ import {
   formContext,
   yearlyPrices,
   monthlyPrices,
-} from "../../../store/form-context";
+} from "../../store/form-context";
 
 import classes from "./ToggleSwitch.module.scss";
 

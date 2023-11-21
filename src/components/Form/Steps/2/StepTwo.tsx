@@ -1,17 +1,21 @@
 import formData from "../../../../store/form-data";
-import { values, plans } from "../../../../store/form-data";
+import { values, plans, errors } from "../../../../store/form-data";
 
 import arcadeIcon from "../../../../assets/icon-arcade.svg";
 import advancedIcon from "../../../../assets/icon-advanced.svg";
 import proIcon from "../../../../assets/icon-pro.svg";
 
-import ToggleSwitch from "../../FormActions/ToggleSwitch";
+import ToggleSwitch from "../../../UI/ToggleSwitch";
 import RadioField from "./RadioField";
 import StepWrapper from "../../../UI/StepWrapper";
+import ErrorMessage from "../../../UI/ErrorMessage";
 
 import classes from "./StepTwo.module.scss";
 
-const StepTwo: React.FC<{ values: values }> = ({ values }) => {
+const StepTwo: React.FC<{ values: values; errors: errors }> = ({
+  values,
+  errors,
+}) => {
   return (
     <StepWrapper>
       <h1>{formData[1].title}</h1>
@@ -40,6 +44,9 @@ const StepTwo: React.FC<{ values: values }> = ({ values }) => {
         />
       </div>
       <ToggleSwitch />
+      {errors && (
+        <ErrorMessage message="Please fill out your personal info in Step 1." />
+      )}
     </StepWrapper>
   );
 };

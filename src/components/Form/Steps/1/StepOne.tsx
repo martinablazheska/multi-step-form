@@ -1,21 +1,15 @@
 import { Field } from "formik";
 import formData from "../../../../store/form-data";
 
+import { errors, touched } from "../../../../store/form-data";
+
 import StepWrapper from "../../../UI/StepWrapper";
 
 import classes from "./StepOne.module.scss";
 
 const StepOne: React.FC<{
-  errors: {
-    name?: string | undefined;
-    email?: string | undefined;
-    phone?: string | undefined;
-  };
-  touched: {
-    name?: boolean | undefined;
-    email?: boolean | undefined;
-    phone?: boolean | undefined;
-  };
+  errors: errors;
+  touched: touched;
 }> = (props) => {
   return (
     <>

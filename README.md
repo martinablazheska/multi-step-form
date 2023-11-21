@@ -54,6 +54,6 @@ Users should be able to:
 
 ### Continued development
 
-1. Improve the calculateSummary function;
+1. Improve the calculateSummary function.
 2. Improve the toggle button (add transition).
 3. Make the toggle button reusable for different functions.

@@ -43,6 +43,17 @@ export type values = {
   largerStorage: boolean;
   customizableProfile: boolean;
 };
+export type errors = {
+  name?: string | undefined;
+  email?: string | undefined;
+  phone?: string | undefined;
+};
+
+export type touched = {
+  name?: boolean | undefined;
+  email?: boolean | undefined;
+  phone?: boolean | undefined;
+};
 
 export const initialValues: values = {
   name: "",

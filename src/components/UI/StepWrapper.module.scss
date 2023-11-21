@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: flex-start;
   width: 100%;
-  height: 100%;
+  height: 85%;
   padding: 30px;
   translate: 0px -25px;
   background-color: var(--white);
@@ -15,5 +15,6 @@
   .step-wrapper {
     box-shadow: none;
     translate: 0px;
+    height: 100%;
   }
 }

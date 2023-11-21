@@ -1,16 +1,20 @@
 import formData from "../../../../store/form-data";
-import { values } from "../../../../store/form-data";
+import { values, errors } from "../../../../store/form-data";
 
 import { useContext } from "react";
 import { formContext } from "../../../../store/form-context";
 
 import StepWrapper from "../../../UI/StepWrapper";
+import ErrorMessage from "../../../UI/ErrorMessage";
 
 import calculateSummary from "./calculate-summary";
 
 import classes from "./StepFour.module.scss";
 
-const StepFour: React.FC<{ values: values }> = ({ values }) => {
+const StepFour: React.FC<{ values: values; errors: errors }> = ({
+  values,
+  errors,
+}) => {
   const { yearlyBilling, setCurrentStep } = useContext(formContext);
 
   function changeHandler() {
@@ -56,6 +60,9 @@ const StepFour: React.FC<{ values: values }> = ({ values }) => {
           {yearlyBilling ? `$${summary.total}/yr` : `+$${summary.total}/mo`}
         </span>
       </div>
+      {errors && (
+        <ErrorMessage message="Please fill out your personal info in Step 1." />
+      )}
     </StepWrapper>
   );
 };
