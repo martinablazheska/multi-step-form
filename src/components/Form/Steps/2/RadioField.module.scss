@@ -11,7 +11,7 @@
     justify-content: flex-start;
     align-items: center;
     border-radius: 15px;
-    padding-left: 15px;
+    padding: 10px;
     outline: 1px solid var(--cool-gray);
     div {
       display: flex;
@@ -21,9 +21,10 @@
       padding-left: 15px;
       p {
         margin: 0;
+        font-size: 0.9rem;
         &:first-of-type {
           color: var(--marine-blue);
-          font-size: 1rem;
+          font-size: 1.1rem;
           font-weight: 700;
           margin-top: -10px;
         }
